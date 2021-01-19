@@ -6,26 +6,121 @@ Looks like we are going to be learning about visual elements to react
 ______________________________________________
 Component Reuse 
 ______________________________________________
+one of the most difficult things in react is figuring out what needs to be a state component and what needs to be a prop 
+
+designing the components is the hardest thing 
+
+with react, things are deceptively simple , the hard part is structuring your app 
+
+Goals
+-learn tips for deciding on components and state
+-practice writing a react app 
+-compare different patterns for writing components 
+
+There are so many ways we can write components 
+
+Generally components should be small and do one thing 
+this often makes them more reusable 
+
+it is not a bad thing to suddenly decide 'this should be 2 or 3 components'
+
+the components should only do one thing 
+
+there are lots of situations where there are single purpose components that are later reused 
+
+like in instacart they reuse the product cards everywhere 
+
+in instagram they use react 
+
+and we can see several examples with the avatar circles even 
+
 
 ______________________________________________
 Dumb Components 
 ______________________________________________
 
+often small components are simple and dont have state 
+
+they are simple components that are going to be rendered by the parent 
+
+often it is easier to make smart parent components and dumb children components 
 ______________________________________________
 Minimizing State
 ______________________________________________
+ifone thing can be calculated from another , dont store both 
+
+if we wanted to have a to do list and we wanted to keep track of how many items are in there, we COULD update the state of the numTodos with each todo added or removed 
+
+but we could also easily just grab it from the todo array 
+
+so that we dont have to store the todos 
+
+it is much better to reserve state, changes in state will lead to rerenders 
+
+there is no need to store something that can be calculated from something else 
+
+back on instacart 
+
+there is a shopping cart checkout widget thing 
+
+some things need to be in state like the product numbers and price 
+
+we dont need to track the state of the price, we could calculate based off of the amounts of product and the prices 
+
+the discounts are also something that can be calculated by subtracting the full price by the discount price 
+
 
 ______________________________________________
 Dice Design Demo 1
 ______________________________________________
+Example of where to put state and how to put it 
 
+Example Design: Dice Games 
+
+The trickiest thing is probably where does state go 
+
+It takes time and some principles that we will talk about 
+
+Should be able to control title, num dice to show, and max value 
+
+we want have a top level dice component that renders a number of die's 
+
+if we are ignoring state to start, if we want to render a certain number of dice 
+
+with what we have so far all we have are our dice do not currently have the ability to change the dice 
+
+so we are going to set an empty array in the state and add in a button to roll to display some numbers 
+
+we really shouldl break up our component 
 ______________________________________________
 Dice Design Demo 2
 ______________________________________________
+purpose-title,numDice,maxVals 
+
+State-values
+
+-OnClick
+
+lets add in the die component 
+you never have to break things up into seperate components but its the react way 
+
+Going to make our die component 
+
+-PROPS
+-val: value for this die 
+-State
+-none
+Events
+-none 
+
+so we are importing in a simple die being rendered in from the Dice component 
+
 
 ______________________________________________
 Comparing State Approaches
 ______________________________________________
+We are going to jump back to the notes in the previous section and continue from that example 
+
 
 ______________________________________________
 Lights Out Exercise 
