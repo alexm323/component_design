@@ -121,8 +121,43 @@ Comparing State Approaches
 ______________________________________________
 We are going to jump back to the notes in the previous section and continue from that example 
 
+grab the colored circles app and bring it in here 
+
+there is an option that we could keep the state for the position inside of the circle itself 
+
+we are now keeping the coordiantes and that state inside of the circle itself, 
+
+now if we want to update that so that we can change the position we can define a function that does just that on the circle 
+
+now we have state sort of spread out
+
+that can generally be a bad thing 
+
+if you never need all of the data together then this could be fine 
+
+but if we wanted all of the data from the circles it would be hard to get that information 
+
+most of the time we will be loading data from an api 
+
+it is easier to pass information down because we cannot pass the information up 
+
+this doesnt mean we have to put all the state in 1 component 
+
+if we have 20-30 components and 5 of them are working together 
+
+we would want to group components and their state to the highest level of component heirarchy that needs to know about it 
+
+the distinction to make is that we are only rerendering 1 circle with the refactored approach. but what if we wanted to add a button thatmoves all of the circles at once?
+
 
 ______________________________________________
 Lights Out Exercise 
 ______________________________________________
+
+App render the component 
+
+LightGrid which is a collection of components called Light 
+The grid has an area that is randomly lit , state would be here because you would want an onclick component to trigger a light on light off function, but you are going to be doing that to additional components aside from the one you click on 
+
+Light should be a dumb component that only worries about being on or off 
 
